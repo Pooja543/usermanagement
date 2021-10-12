@@ -1,35 +1,0 @@
-
-server:
-  port: 0
-  
-spring:  application:    name: user-management-service  
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${random.int}
-    hostname: localhost
-
-  
-Cognito:    
-      aws: 
-        accesskey: AKIAYZOXA3O4HNGVWCQL
-        secret_access_key: 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 
-        client_id: 2640gqqchl9bhtoaipi09de0nr
-        userpool_id: ap-south-1_W7vTQcho9
-        region: ap-south-1
-        idTokenPoolUrl: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_W7vTQcho9
-        
-logging:
-   level:
-      org:
-       springframework:
-                security:
-                       web:
-                         FilterChainProxy : debug
-springdoc:
-  packagesToScan: com.otsi.retail.authservice   
